@@ -21,8 +21,10 @@ abstract class Archetype {
     return this._cost;
   }
 
+  // retorna uma energyType vinda da interface
   abstract get energyType(): string;
 
+  // corresponde à quantidade de instâncias criadas a partir das classes estendidas da classe
   public static createdArchetypeInstances(): number {
     throw new Error('Not implemented');
   }
