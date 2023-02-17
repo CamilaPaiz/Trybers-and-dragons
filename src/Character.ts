@@ -63,9 +63,8 @@ class Character implements Fighter {
     const damage = attackPoints - this._defense;
     if (damage <= 0) this._lifePoints -= 1;
     if (damage > 0) this._lifePoints -= damage;
-    if (this._lifePoints <= 0) {
-      return -1; 
-    }
+    if (this._lifePoints <= 0) this._lifePoints = -1;
+     
     return this._lifePoints;
   }
 
