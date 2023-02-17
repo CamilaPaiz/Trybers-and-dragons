@@ -84,8 +84,8 @@ class Character implements Fighter {
     this._energy.amount = 10;
 
     const leveledUpLifePoinst = this._maxLifePoints + getRandomInt(1, 10);
-    if (leveledUpLifePoinst > this._race.maxLifePoints) {
-      this._maxLifePoints = this._race.maxLifePoints;
+    if (leveledUpLifePoinst > this.race.maxLifePoints) {
+      this._maxLifePoints = this.race.maxLifePoints;
     } else {
       this._maxLifePoints = leveledUpLifePoinst;
     }
