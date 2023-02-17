@@ -22,9 +22,9 @@ class Monster implements SimpleFighter {
   }
 
   receiveDamage(attackPoints: number): number {
-    const newLifePoints = this._lifePoints - attackPoints;
-    if (newLifePoints === 0) {
-      return -1; 
+    const newLifePoints = this.lifePoints - attackPoints;
+    if (this._lifePoints <= 0) {
+      return -1;
     }
     return newLifePoints;
   }
