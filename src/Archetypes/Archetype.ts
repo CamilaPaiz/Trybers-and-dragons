@@ -1,3 +1,5 @@
+import { EnergyType } from '../Energy';
+
 abstract class Archetype {
   private _name: string;
   private _special: number;
@@ -22,7 +24,7 @@ abstract class Archetype {
   }
 
   // retorna uma energyType vinda da interface
-  abstract get energyType(): string;
+  abstract get energyType(): EnergyType;
 
   // corresponde à quantidade de instâncias criadas a partir das classes estendidas da classe
   public static createdArchetypeInstances(): number {

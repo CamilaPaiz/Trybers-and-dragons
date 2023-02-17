@@ -1,7 +1,8 @@
+import { EnergyType } from '../Energy';
 import Archetype from './Archetype'; 
 
 class Mage extends Archetype {
-  private _energyType: string;
+  private _energyType: EnergyType;
   private static _instances = 0;
 
   constructor(name:string) {
@@ -10,10 +11,10 @@ class Mage extends Archetype {
     Mage._instances += 1;
   }
 
-  get energyType(): string {
+  get energyType(): EnergyType {
     return this._energyType;
   }
-
+  
   public static createdArchetypeInstances(): number {
     return Mage._instances;
   }
