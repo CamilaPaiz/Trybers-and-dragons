@@ -1,4 +1,4 @@
-import { SimpleFighter } from './Fighter';
+import Fighter, { SimpleFighter } from './Fighter';
 
 class Monster implements SimpleFighter {
   private _lifePoints:number;
@@ -17,17 +17,19 @@ class Monster implements SimpleFighter {
     return this._lifePoints;
   }
 
-  attack(enemy: SimpleFighter): void {
-    enemy.receiveDamage(this._strength);
-  }
-
   receiveDamage(attackPoints: number): number {
-    const newLifePoints = this.lifePoints - attackPoints;
+    this._lifePoints -= attackPoints;
     if (this._lifePoints <= 0) {
       return -1;
     }
-    return newLifePoints;
+    return this._lifePoints;
   }
+
+  attack(enemy: Fighter): void {
+    enemy.receiveDamage(this.strength);
+  }
+
+  // Character pode atacar um Monster, e o Monster receberá de dano;
 }
 
 export default Monster;
